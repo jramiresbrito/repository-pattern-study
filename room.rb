@@ -1,7 +1,7 @@
 class Room
   def initialize(attributes = {})
     @capacity = attributes[:capacity] || 1
-    @pacients = attributes[:pacients] || []
+    @pacients = []
     @remaining_spots = @capacity - @pacients.length
   end
 
@@ -17,6 +17,7 @@ class Room
 
     patients.each do |patient|
       @pacients << patient
+      patient.room = self
       @remaining_spots -= 1
       puts "Patient #{patient.name} added successfully"
     end
