@@ -5,7 +5,6 @@ class Patient
     @name = attributes[:name]
     @cured = attributes[:cured] || false
     @blood_type = attributes[:blood_type] || 'A'
-    @room = attributes[:room]
   end
 
   def cure
