@@ -9,11 +9,18 @@ class Room
     @pacients.length == @capacity
   end
 
-  def add_patient(patient)
+  def add_patients(patients)
     return "This room it's full." if full?
+    if patients.length > @remaining_spots
+      return "There are only #{@remaining_spots} spots available"
+    end
 
-    @pacients << patient
-    @remaining_spots -= 1
-    'Patient added successfully'
+    patients.each do |patient|
+      @pacients << patient
+      @remaining_spots -= 1
+      puts "Patient #{patient.name} added successfully"
+    end
+
+    "#{@remaining_spots} spots remaining for this room."
   end
 end
