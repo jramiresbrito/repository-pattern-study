@@ -1,6 +1,7 @@
 class Room
   class CapacityReachedError < RuntimeError; end
 
+  attr_accessor :id
   def initialize(attributes = {})
     @capacity = attributes[:capacity] || 1
     @pacients = []
@@ -20,9 +21,10 @@ class Room
     patients.each do |patient|
       @pacients << patient
       patient.room = self
+      puts "Patient #{patient.name} added successfully."
       @remaining_spots -= 1
     end
 
-    "Patients added successfully. #{@remaining_spots} spots remaining for this room."
+    "#{@remaining_spots} spots remaining for this room."
   end
 end

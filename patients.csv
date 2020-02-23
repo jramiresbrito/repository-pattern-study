@@ -1,0 +1,6 @@
+id,name,cured,blood_type
+1,Geralt,true,A
+2,Ciri,true,A
+3,Triss,true,A
+4,Yennefer,false,AB
+5,Dandelion,false,A
