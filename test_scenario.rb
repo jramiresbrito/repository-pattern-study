@@ -1,9 +1,12 @@
 require_relative 'patient'
+require_relative 'room_repository'
 require_relative 'patient_repository'
 
-repository = PatientRepository.new('patients.csv')
+rooms = RoomRepository.new('rooms.csv')
+patients = PatientRepository.new('patients.csv', rooms)
 
 dandelion = Patient.new(name: 'Dandelion')
-repository.add(dandelion)
+vesemir = Patient.new(name: 'Vesemir')
 
-p repository
+patients.add(dandelion, 2)
+patients.add(vesemir, 2)

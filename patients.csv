@@ -1,6 +1,5 @@
-id,name,cured,blood_type
-1,Geralt,true,A
-2,Ciri,true,A
-3,Triss,true,A
-4,Yennefer,false,AB
-5,Dandelion,false,A
+id,name,cured,blood_type,room_id
+1,Geralt,true,A,1
+2,Ciri,true,A,2
+3,Triss,true,A,1
+4,Yennefer,false,AB,2
