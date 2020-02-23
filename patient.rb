@@ -1,6 +1,13 @@
 class Patient
-  def initialize(name, cured)
-    @name = name
-    @cured = cured
+  attr_reader :name, :cured
+
+  def initialize(attributes = {})
+    @name = attributes[:name]
+    @cured = attributes[:cured] || false
+    @blood_type = attributes[:blood_type] || 'A'
+  end
+
+  def cure
+    @cured = true
   end
 end
