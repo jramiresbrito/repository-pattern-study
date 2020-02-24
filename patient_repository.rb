@@ -34,7 +34,7 @@ class PatientRepository
       @patients << patient
       room = @room_repository.find(row[:room_id] - 1)
       room.add_patients([patient])
-      @next_id = patient.id.to_i
+      @next_id = patient.id
     end
     @next_id += 1
   end
