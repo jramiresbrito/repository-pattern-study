@@ -6,7 +6,7 @@ class Room
   def initialize(attributes = {})
     @id = attributes[:id]
     @capacity = attributes[:capacity] || 1
-    @patients = []
+    @patients = attributes[:patients] || []
     @remaining_spots = @capacity - @patients.length
   end
 

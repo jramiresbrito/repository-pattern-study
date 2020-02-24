@@ -3,3 +3,5 @@ id,name,cured,blood_type,room_id
 2,Ciri,true,A,2
 3,Triss,true,A,1
 4,Yennefer,false,AB,2
+5,Dandelion,false,A,2
+6,Vesemir,false,A,2
