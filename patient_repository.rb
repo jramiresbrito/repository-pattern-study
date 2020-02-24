@@ -27,9 +27,12 @@ class PatientRepository
     csv_options = { headers: :first_row, header_converters: :symbol }
 
     CSV.foreach(@csv_file, csv_options) do |row|
+      row[:id] = row[:id].to_i
+      row[:cured] = row[:cured] == 'true'
+      row[:room_id] = row[:room_id].to_i
       patient = Patient.new(row)
       @patients << patient
-      room = @room_repository.find(row[:room_id].to_i - 1)
+      room = @room_repository.find(row[:room_id] - 1)
       room.add_patients([patient])
       @next_id = patient.id.to_i
     end
