@@ -14,7 +14,7 @@ class Room
     @patients.length == @capacity
   end
 
-  def add_patients(patients)
+  def add_patients(patients = [])
     raise CapacityReachedError, "This room it's full." if full?
     if patients.length > @remaining_spots
       raise CapacityReachedError, "There are only #{@remaining_spots} spots available"
