@@ -6,6 +6,8 @@ class RoomRepository
   def initialize(csv_file)
     @csv_file = csv_file
     @rooms = []
+    @next_id = 0
+
     load_csv
   end
 
@@ -14,7 +16,6 @@ class RoomRepository
   end
 
   def load_csv
-    @next_id = 0
     csv_options = { headers: :first_row, header_converters: :symbol }
 
     CSV.foreach(@csv_file, csv_options) do |row|
